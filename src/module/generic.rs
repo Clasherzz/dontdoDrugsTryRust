@@ -1,0 +1,3 @@
+struct person<T,Q>{
+    
+}

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\hyper",
+    "\\hyper\\src",
+    "\\multi",
+    "\\multi\\src",
+    "\\reqwest",
+    "\\reqwest\\src",
+    "\\src",
+    "\\src\\module"
+  ],
+  "SelectedNode": "\\reqwest\\src\\main.rs",
+  "PreviewInSolutionExplorer": false
+}
