@@ -1,4 +1,4 @@
-workspace = { members = ["cli", "hyper", "multi", "reqwest"] }
+workspace = { members = ["cli", "hyper", "hypermulti", "multi", "reqwest"] }
 [package]
 name = "rust"
 version = "0.1.0"

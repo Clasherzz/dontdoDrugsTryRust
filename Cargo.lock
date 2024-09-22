@@ -213,6 +213,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "common-multipart-rfc7578"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "22328b3864f1d8dbe7036f3f2fdfdcb1f367af43dca418943d396fbf8c4b8021"
+dependencies = [
+ "bytes 1.7.1",
+ "futures-core",
+ "futures-util",
+ "http",
+ "mime 0.3.17",
+ "mime_guess 2.0.5",
+ "rand 0.8.5",
+ "thiserror",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -416,6 +432,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "futures-io"
+version = "0.3.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a44623e20b9681a318efdd71c299b6b222ed6f231972bfe2f224ebad6311f0c1"
+
+[[package]]
 name = "futures-macro"
 version = "0.3.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -445,8 +467,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48"
 dependencies = [
  "futures-core",
+ "futures-io",
  "futures-macro",
  "futures-task",
+ "memchr 2.7.4",
  "pin-project-lite",
  "pin-utils",
  "slab 0.4.9",
@@ -626,6 +650,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "hyper-multipart-rfc7578"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "63ca8108ac0ae98d310d41cddb11c6b822e8aca865dbe421366934e6f7f72e10"
+dependencies = [
+ "bytes 1.7.1",
+ "common-multipart-rfc7578",
+ "futures-core",
+ "http",
+ "hyper 0.14.30",
+]
+
+[[package]]
 name = "hyper-rustls"
 version = "0.22.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -667,6 +704,17 @@ dependencies = [
  "native-tls",
  "tokio 1.40.0",
  "tokio-native-tls",
+]
+
+[[package]]
+name = "hypermulti"
+version = "0.1.0"
+dependencies = [
+ "hyper 0.14.30",
+ "hyper-multipart-rfc7578",
+ "hyper-rustls 0.22.1",
+ "hyper-tls",
+ "tokio 1.40.0",
 ]
 
 [[package]]
@@ -2039,6 +2087,26 @@ dependencies = [
  "once_cell",
  "rustix",
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "thiserror"
+version = "1.0.63"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0342370b38b6a11b6cc11d6a805569958d54cfa061a29969c3b5ce2ea405724"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.63"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4558b58466b9ad7ca0f102865eccc95938dca1a74a856f2b57b6629050da261"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

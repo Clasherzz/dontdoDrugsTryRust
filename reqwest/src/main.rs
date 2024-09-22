@@ -532,16 +532,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::builder().build::<_, hyper::Body>(https);
 
     // Parse the URL
-    let url = "http://localhost:3000/api/hello".parse::<Uri>()?;
-
+   let url = "http://localhost:3000/api/hello".parse::<Uri>()?;
+  // let url = "https://api.apidash.dev/io/form".parse::<Uri>()?;
     // Create a Multipart object and add multiple text and file fields
     let mut multipart = Multipart::new();
 
     // Adding multiple text fields
-    multipart.add_text("text", "API"); // First text field
-    multipart.add_text("sep", "|"); // Second text field
+    //multipart.add_text("text", "API"); // First text field
+    //multipart.add_text("sep", "|"); // Second text field
     multipart.add_text("times", "3"); // Example field for name
-    //multipart.add_text("place", "place"); // Example field for place
+    multipart.add_text("place", "place");
+    //multipart.add_text("place", "place");// Example field for place
 
     // Adding multiple file fields directly without using `if let`
     //multipart.add_file("file1", r"C:\Users\HP\Downloads\GCF Prepartion Deck - Visa -Codesignal.pdf");
